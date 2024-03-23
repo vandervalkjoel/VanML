@@ -30,8 +30,7 @@ merged_df.drop(columns=['callreportnum1'], inplace=True)
 # Display the first few rows of the new merged DataFrame
 # Write the dataset to a CSV file if needed
 
-referrals_df = pd.read_csv('datasets/referrals.csv')
-
+referrals_df = pd.read_csv('data/raw/referrals.csv')
 
 # Group the 'referrals' dataset by 'Callreportnum' and count the number of occurrences of each unique 'Callreportnum'
 referrals_count_df = referrals_df.groupby('Callreportnum2').size().reset_index(name='Number_of_Referrals')
@@ -49,4 +48,4 @@ merged_df['Number_of_Referrals'] = merged_df['Number_of_Referrals'].astype(int) 
 print(merged_df.head())
 
 # Save the new merged DataFrame to a CSV file if needed
-merged_df.to_csv('datasets/mergedCallsReduced.csv', index=False)
+merged_df.to_csv('data/processed/mergedCallsReduced.csv', index=False)

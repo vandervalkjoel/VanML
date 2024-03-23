@@ -1,4 +1,4 @@
-from Preprocessing import PreprocessingPipeline
+from src.data_preparation.Preprocessing import PreprocessingPipeline
 
 
 def run_preprocessing_pipeline():
